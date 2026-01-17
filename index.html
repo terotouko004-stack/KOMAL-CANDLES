@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komal Candles</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-[#FDF8F3]">
+
+  <!-- Header / Navbar -->
+  <header class="bg-[#8B7355] text-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-display font-bold">Komal Candles</h1>
+      <nav class="hidden md:flex gap-6">
+        <a href="#products" class="hover:underline">Products</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col gap-4 p-4 bg-[#8B7355] text-white md:hidden">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="text-center py-32 relative">
+    <h2 id="hero-title" class="text-5xl md:text-7xl font-display font-bold mb-4">Handcrafted Candles</h2>
+    <p class="text-lg md:text-2xl mb-8">Illuminate your space with warmth and elegance</p>
+    <a href="#products" class="px-6 py-3 bg-[#D9A066] text-white rounded-lg font-semibold hover:bg-[#c38c4f] transition">Shop Now</a>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="max-w-7xl mx-auto py-20 px-4">
+    <h2 class="text-4xl font-display font-bold text-center mb-12">Our Products</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Product Card Example -->
+      <div class="product-card bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="mb-4">
+          <img src="assets/images/candle1.jpg" alt="Vanilla Candle" class="mx-auto w-32 h-32 object-cover rounded-full">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Vanilla Candle</h3>
+        <p class="text-gray-600 mb-4">$15.00</p>
+        <button class="add-to-cart px-4 py-2 bg-[#D9A066] text-white rounded-lg hover:bg-[#c38c4f] transition">Add to Cart</button>
+      </div>
+
+      <div class="product-card bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="mb-4">
+          <img src="assets/images/candle2.jpg" alt="Lavender Candle" class="mx-auto w-32 h-32 object-cover rounded-full">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Lavender Candle</h3>
+        <p class="text-gray-600 mb-4">$18.00</p>
+        <button class="add-to-cart px-4 py-2 bg-[#D9A066] text-white rounded-lg hover:bg-[#c38c4f] transition">Add to Cart</button>
+      </div>
+
+      <div class="product-card bg-white rounded-xl shadow-lg p-6 text-center">
+        <div class="mb-4">
+          <img src="assets/images/candle3.jpg" alt="Rose Candle" class="mx-auto w-32 h-32 object-cover rounded-full">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Rose Candle</h3>
+        <p class="text-gray-600 mb-4">$20.00</p>
+        <button class="add-to-cart px-4 py-2 bg-[#D9A066] text-white rounded-lg hover:bg-[#c38c4f] transition">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-[#F5EFE6] py-20 px-4 text-center">
+    <h2 class="text-4xl font-display font-bold mb-8">About Komal Candles</h2>
+    <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+      Komal Candles creates handcrafted, high-quality candles that bring warmth, ambiance, and elegance to your home. Every candle is carefully poured and designed to inspire calm and joy.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="max-w-3xl mx-auto py-20 px-4 text-center">
+    <h2 class="text-4xl font-display font-bold mb-8">Contact Us</h2>
+    <form id="contact-form" class="flex flex-col gap-4">
+      <input type="text" name="name" placeholder="Your Name" required class="p-3 rounded border border-gray-300">
+      <input type="email" name="email" placeholder="Your Email" required class="p-3 rounded border border-gray-300">
+      <textarea name="message" placeholder="Your Message" required class="p-3 rounded border border-gray-300"></textarea>
+      <button type="submit" class="px-6 py-3 bg-[#D9A066] text-white rounded-lg font-semibold hover:bg-[#c38c4f] transition">Send Message</button>
+    </form>
+    <p id="form-success" class="hidden mt-4 text-green-600 font-semibold">Thank you! Your message has been sent.</p>
+  </section>
+
+  <!-- Toast -->
+  <div id="cart-toast" class="fixed bottom-4 right-4 bg-[#D9A066] text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transform translate-y-5 transition-all duration-300">
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
